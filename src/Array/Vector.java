@@ -27,7 +27,7 @@ public class Vector {
 	 * @param longitud
 	 * @return Retorna el vector con una longitud establecida.
 	 */
-	public static int[] setIntVectorSize(int longitud) {
+	public static int[] setIntSize(int longitud) {
 		int vector[] = new int[longitud];
 		return vector;
 	}
@@ -38,7 +38,7 @@ public class Vector {
 	 * @param vector
 	 * @return Retorna TRUE si está ordenado ascendentemente o FALSE si no.
 	 */
-	public static boolean checkAscendingOrderedVector(int[] vector) {
+	public static boolean checkAscendingOrder(int[] vector) {
 		for (int i = 0; i < vector.length - 1; i++) {
 			if (vector[i] > vector[i + 1]) {
 				return false;
@@ -53,7 +53,7 @@ public class Vector {
 	 * @param vector
 	 * @return Retorna TRUE si está ordenado descendentemente o FALSE si no.
 	 */
-	public static boolean checkDescendingOrderedVector(int[] vector) {
+	public static boolean checkDescendingOrder(int[] vector) {
 		for (int i = 0; i < vector.length - 1; i++) {
 			if (vector[i] < vector[i + 1]) {
 				return false;
@@ -69,7 +69,7 @@ public class Vector {
 	 * @return Retorna TRUE si está ordenado o FALSE si no lo está.
 	 */
 	public static boolean checkOrdered(int[] vector) {
-		if (checkAscendingOrderedVector(vector) || checkDescendingOrderedVector(vector))
+		if (checkAscendingOrder(vector) || checkDescendingOrder(vector))
 			return true;
 		else
 			return false;
@@ -83,7 +83,7 @@ public class Vector {
 	 */
 	public static int[] sortAscending(int[] vector) {
 		int valorAux;
-		while (!checkAscendingOrderedVector(vector)) {
+		while (!checkAscendingOrder(vector)) {
 			for (int i = 0; i < vector.length - 1; i++) {
 				if (vector[i] > vector[i + 1]) {
 					valorAux = vector[i];
@@ -103,7 +103,7 @@ public class Vector {
 	 */
 	public static int[] sortDescending(int[] vector) {
 		int valorAux;
-		while (!checkDescendingOrderedVector(vector)) {
+		while (!checkDescendingOrder(vector)) {
 			for (int i = 0; i < vector.length - 1; i++) {
 				if (vector[i] < vector[i + 1]) {
 					valorAux = vector[i];

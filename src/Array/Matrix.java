@@ -87,7 +87,7 @@ public class Matrix {
 	 *            Valor maximo en matriz.
 	 * @return Retorna la matriz.
 	 */
-	public static int[][] fillMatrixRandomNumbers(int[][] matriz, int min, int max) {
+	public static int[][] fillRandomNumbers(int[][] matriz, int min, int max) {
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
 				matriz[i][j] = Integer.generateRandomNumber(max, min);
@@ -143,7 +143,7 @@ public class Matrix {
 	 * @param matriz
 	 * @return Retorna TRUE si es identidad o FALSE si no lo es.
 	 */
-	public static boolean checkIdentityMatrix(int[][] matriz) {
+	public static boolean checkIdentity(int[][] matriz) {
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length; j++) {
 				if ((i == j && matriz[i][j] != 1) || (i != j && matriz[i][j] != 0)) {
@@ -161,7 +161,7 @@ public class Matrix {
 	 * @return Retorna TRUE si está ordenada ascendentemente o FALSE en caso
 	 *         contrario.
 	 */
-	public static boolean checkAscendingOrderedMatrix(int[][] matriz) {
+	public static boolean checkAscendingOrder(int[][] matriz) {
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length - 1; j++) {
 				if (matriz[i][j] > matriz[i][j + 1])
@@ -181,7 +181,7 @@ public class Matrix {
 	 * @return Retorna TRUE si está ordenada descendentemente o FALSE en caso
 	 *         contrario.
 	 */
-	public static boolean checkDescendingOrderedMatrix(int[][] matriz) {
+	public static boolean checkDescendingOrder(int[][] matriz) {
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz.length - 1; j++) {
 				if (matriz[i][j] < matriz[i][j + 1])
@@ -201,7 +201,7 @@ public class Matrix {
 	 * @return Retorna TRUE si está ordenada o FALSE en caso contrario.
 	 */
 	public static boolean checkOrdered(int[][] matriz) {
-		if (checkAscendingOrderedMatrix(matriz) || checkDescendingOrderedMatrix(matriz))
+		if (checkAscendingOrder(matriz) || checkDescendingOrder(matriz))
 			return true;
 		else
 			return false;
