@@ -1,6 +1,6 @@
 package Array;
 
-import Integer.Integer;
+import Numeric.Integer;
 
 public class Vector {
 
