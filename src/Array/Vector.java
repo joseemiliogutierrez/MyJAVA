@@ -9,7 +9,7 @@ public class Vector {
 	 * 
 	 * @param vector
 	 */
-	public static void showVector(int[] vector) {
+	public static void show(int[] vector) {
 		for (int i = 0; i < vector.length; i++) {
 			System.out.print(vector[i] + " ");
 		}

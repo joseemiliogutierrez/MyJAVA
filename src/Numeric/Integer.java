@@ -1,10 +1,8 @@
 package Numeric;
 
-public class Integer {
+import Array.Vector;
 
-	public static void main(String[] args) {
-		System.out.println(checkPrime(6));
-	}
+public class Integer {
 
 	/**
 	 * Genera un numero aleatorio entre un minimo y un maximo.
@@ -44,5 +42,29 @@ public class Integer {
 				return false;
 		}
 		return true;
+	}
+
+	/**
+	 * Almacena en un vector los divisores del número proporcionado.
+	 * 
+	 * @param numero
+	 * @return Retorna un vector con los dividores del numero proporcionado
+	 */
+	public static int[] extractDividers(int numero) {
+		int longitud = 0;
+		for (int i = 1; i <= numero; i++) {
+			if(numero % i == 0)
+				longitud++;
+		}
+		
+		int[] divisores = Vector.setIntSize(longitud);
+		
+		for (int i = 1, posicion = 0; i <= numero; i++) {
+			if (numero % i == 0) {
+				divisores[posicion] = i;
+				posicion++;
+			}
+		}
+		return divisores;
 	}
 }
