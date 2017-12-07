@@ -1,8 +1,13 @@
 package Numeric;
 
 public class Integer {
+
+	public static void main(String[] args) {
+		System.out.println(checkPrime(6));
+	}
+
 	/**
-	 * Genera un numero aleatorio entre un minimo y un maximo
+	 * Genera un numero aleatorio entre un minimo y un maximo.
 	 * 
 	 * @param max
 	 *            Valor maximo.
@@ -15,7 +20,7 @@ public class Integer {
 	}
 
 	/**
-	 * Comprueba si un numero es par o impar
+	 * Comprueba si un numero es par o impar.
 	 * 
 	 * @param numero
 	 * @return Retorna TRUE si el numero es par o FALSE si no lo es.
@@ -25,5 +30,19 @@ public class Integer {
 			return true;
 		else
 			return false;
+	}
+
+	/**
+	 * Comprueba si un número es primo.
+	 * 
+	 * @param numero
+	 * @return Retorna TRUE si es primo o FALSE si no lo es.
+	 */
+	public static boolean checkPrime(int numero) {
+		for (int i = 2; i <= numero; i++) {
+			if (numero % i == 0 && i != numero)
+				return false;
+		}
+		return true;
 	}
 }
