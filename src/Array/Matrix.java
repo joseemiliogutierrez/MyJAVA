@@ -4,17 +4,6 @@ import Integer.Integer;
 
 public class Matrix {
 
-	public static void main(String[] args) {
-		int[][] matriz = setIntMatrixSize(5);
-		int[] coordenadas = { 1, 2 };
-		for (int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j < matriz.length; j++) {
-				if (checkContiguousLoop(coordenadas, i, j))
-					System.out.println(i + "." + j);
-			}
-		}
-	}
-
 	/**
 	 * Recorre y muestra los valores de una matriz de tipo entero.
 	 * 
@@ -71,7 +60,7 @@ public class Matrix {
 	 *            Longitud de la matriz.
 	 * @return Retorna la matriz con una longitud establecida.
 	 */
-	public static int[][] setIntMatrixSize(int longitud) {
+	public static int[][] setIntSize(int longitud) {
 		int matriz[][] = new int[longitud][longitud];
 		return matriz;
 	}
@@ -83,7 +72,7 @@ public class Matrix {
 	 *            Longitud de la matriz.
 	 * @return Retorna la matriz con una longitud establecida.
 	 */
-	public static char[][] setCharMatrixSize(int longitud) {
+	public static char[][] setCharSize(int longitud) {
 		char matriz[][] = new char[longitud][longitud];
 		return matriz;
 	}
@@ -282,7 +271,7 @@ public class Matrix {
 	 */
 	public static int[][] mess(int[][] matriz) {
 		int valorAux;
-		for (int z = 0; z <= 1000; z++) {
+		for (int z = 0; z < 1000; z++) {
 			for (int i = 0; i < matriz.length; i++) {
 				for (int j = 0; j < matriz.length; j++) {
 					int[] posicion = { Integer.generateRandomNumber(matriz.length - 1, 0),
@@ -294,5 +283,25 @@ public class Matrix {
 			}
 		}
 		return matriz;
+	}
+
+	/**
+	 * Comprueba si una matriz es concéntrica.
+	 * 
+	 * @param matriz
+	 * @return Retorna TRUE si es concéntrica o FALSE si no lo es.
+	 */
+	public static boolean checkConcentric(int[][] matriz) {
+		for (int i = 0; i < Math.round(matriz.length / 2); i++) {
+			for (int j = i; j < matriz.length - (i + 1); j++) {
+				if (matriz[i][j] != matriz[i][j + 1]
+						|| matriz[matriz.length - (i + 1)][j] != matriz[matriz.length - (i + 1)][j + 1]
+						|| matriz[j][i] != matriz[j + 1][i]
+						|| matriz[j][matriz.length - (i + 1)] != matriz[j + 1][matriz.length - (i + 1)]) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 }
