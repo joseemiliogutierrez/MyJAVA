@@ -4,12 +4,6 @@ import Integer.Integer;
 
 public class Vector {
 
-	public static void main(String[] args) {
-		int vector[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-		mess(vector);
-		showVector(vector);
-	}
-
 	/**
 	 * Recorre y muestra un vector por consola.
 	 * 
