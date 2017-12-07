@@ -1,6 +1,6 @@
-package Array;
+package array;
 
-import Numeric.Integer;
+import numeric.Integer;
 
 public class Matrix {
 

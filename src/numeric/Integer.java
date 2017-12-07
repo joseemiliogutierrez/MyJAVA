@@ -1,8 +1,20 @@
-package Numeric;
+package numeric;
 
-import Array.Vector;
+import java.util.*;
+import array.Vector;
 
 public class Integer {
+
+	/**
+	 * Permite escribir un entero por teclado.
+	 * 
+	 * @return Retorna el entero introducido por teclado.
+	 */
+	public static int writeNumber() {
+		@SuppressWarnings("resource")
+		Scanner escribir = new Scanner(System.in);
+		return escribir.nextInt();
+	}
 
 	/**
 	 * Genera un numero aleatorio entre un minimo y un maximo.
@@ -48,17 +60,17 @@ public class Integer {
 	 * Almacena en un vector los divisores del número proporcionado.
 	 * 
 	 * @param numero
-	 * @return Retorna un vector con los dividores del numero proporcionado
+	 * @return Retorna un vector con los dividores del numero proporcionado.
 	 */
 	public static int[] extractDividers(int numero) {
 		int longitud = 0;
 		for (int i = 1; i <= numero; i++) {
-			if(numero % i == 0)
+			if (numero % i == 0)
 				longitud++;
 		}
-		
+
 		int[] divisores = Vector.setIntSize(longitud);
-		
+
 		for (int i = 1, posicion = 0; i <= numero; i++) {
 			if (numero % i == 0) {
 				divisores[posicion] = i;
