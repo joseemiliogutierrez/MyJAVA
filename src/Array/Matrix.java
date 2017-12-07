@@ -286,7 +286,7 @@ public class Matrix {
 	}
 
 	/**
-	 * Comprueba si una matriz es concéntrica.
+	 * Comprueba si una matriz CUADRADA es concéntrica.
 	 * 
 	 * @param matriz
 	 * @return Retorna TRUE si es concéntrica o FALSE si no lo es.
